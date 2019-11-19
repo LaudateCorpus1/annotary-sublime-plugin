@@ -3,7 +3,7 @@
 1) To integrate the plugin first clone this repository
 2) Initialize submodules:
 
-```
+```shell
 git submodule init
 git submodule update
 ```
