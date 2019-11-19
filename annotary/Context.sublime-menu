@@ -1,0 +1,21 @@
+[
+{
+	"id" : "annotary",
+	"caption": "Annotary",
+	"children":
+	[
+	{
+		"caption" : "Run",
+		"command" : "annotary_lint"
+	},
+	{
+		"caption" : "Clean",
+		"command" : "annotary_clean"
+	},
+	{
+		"caption" : "Open Config",
+		"command" : "annotary_open_config"
+	}
+	]
+}
+]

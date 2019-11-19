@@ -1,0 +1,6 @@
+[submodule "mythril"]
+	path = mythril
+	url = https://github.com/LoCorVin/mythril.git
+[submodule "maian"]
+	path = maian
+	url = https://github.com/LoCorVin/MAIAN.git

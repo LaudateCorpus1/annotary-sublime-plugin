@@ -1,0 +1,9 @@
+{
+    "chain_verification": true,
+    "max_transaction_depth": 3,
+    "mythril_depth": 25,
+    "search_for_indipendent_chain" : true,
+    "set_restricted": {
+    	"ignore_length_writing": true
+    }
+}
