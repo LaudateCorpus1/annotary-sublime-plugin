@@ -1,4 +1,7 @@
 # Annotary
+Annotary is a tool allowing developers to annotated Solidity source code with expected execution behavior and then drive a symbolic execution to find potential violations.
+
+## Installation
 
 1) To integrate the plugin first clone this repository
 2) Initialize submodules:
