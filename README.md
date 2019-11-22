@@ -84,6 +84,11 @@ or
 @set_restricted(constructor, setOwner(address))
 address owner
 ```
+## License
+The Annotary-Plugin is released under the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0).
+
+## Publication
+This Plugin is subject to the publication: [Annotary: A Concolic Execution System for Developing Secure Smart Contracts](https://arxiv.org/pdf/1907.03868).
 
 
 
