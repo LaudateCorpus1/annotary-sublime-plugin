@@ -1,50 +1,56 @@
 # Annotary
-Annotary is a tool allowing developers to annotated Solidity source code with expected execution behavior and then drive a symbolic execution to find potential violations.
+
+Annotary supports developers to write error-free Solidity smart contracts. It does so by adding a number of annotations (thus the name) which express conditions and invariants which must be fulfilled by the smart contract. An symbolic/concolic execution analysis engine based on a modified version of Mythril will then check if the contract code may violate any of the conditions.
+
+This project is the plugin that brings error/warning highlighting and support for annotations to the Sublime Text editor. The actual symbolic execution engine is included as a submodule and hosted [here](https://github.com/konradweiss/mythril).
 
 ## Installation
 
-1) To integrate the plugin first clone this repository
-2) Initialize submodules:
+1) To integrate the plugin first clone this repository including submodules:
 
 ```
-git submodule init
-git submodule update
+git clone --recurse-submodules  git@github.com:Fraunhofer-AISEC/annotary-sublime-plugin.git
 ```
 
-3) Install libraries
+2) Install libraries
 ```
 sudo apt-get install libssl-dev
 ```
 
-4) Maybe if the installation does not successfully install requirement do it by:
+3) If the installation did not succeed, you may need to install further Mythril dependencies:
 ```
 cd mythril
 pip3 install -r requirements.txt
 ```
 
-5) Install mythril modified for annotary
+4) Install the Annotary-compatible version of Mythril:
 ```
 cd mythril
 python3 setup.py build
 sudo python3 setup.py install
 ```
 
-6) Copy plugin to Sublime's plugin Folder: e.g.
+4) Copy this plugin to Sublime's plugin folder: e.g.
+
 ```
 cp -R annotary ~/.config/sublime-text-3/Packages/
 ```
+
 Run an analysis over the Annotary submenu when right-clicking inside a .sol file to open the context Menu.
 
 Note:
-It is also necessary to get the solidity compiler, install it:
+It is also necessary to get the solidity compiler. Install it with:
+
 ```
 sudo apt-get install solc
 ```
 or get a specific version from https://github.com/ethereum/solidity/releases
 
-Python version used: 3.6 the minimal version 3.5.3 should be sufficient
+Python version used: 3.6, version 3.5.3 should also be sufficient
 
-## Annotations
+## Supported Annotations
+
+The following annotations are supported by Annotary:
 
 ### @check
 An annotation of the form `@check(<condition>)` can be inline to check whether or not the specific `condition` holds at that point in the program.
@@ -85,13 +91,23 @@ or
 address owner
 ```
 ## License
-The Annotary-Plugin is released under the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0).
+The Annotary plugin is released under the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0).
 
 ## Publication
-This Plugin is subject to the publication: [Annotary: A Concolic Execution System for Developing Secure Smart Contracts](https://arxiv.org/pdf/1907.03868).
+This plugin is part of the publication: [Annotary: A Concolic Execution System for Developing Secure Smart Contracts](https://arxiv.org/pdf/1907.03868).
 
+When refering to our work, please cite our ESORICS 2019 paper:
 
-
-
-
+```
+@inproceedings{Weiss2019,
+author = {Konrad Weiss and Julian Sch{\"{u}}tte},
+booktitle = {Computer Security -- ESORICS 2019},
+editor = {Sako, Kazue and Schneider, Steve and Ryan, Peter Y A},
+isbn = {978-3-030-29959-0},
+pages = {747--766},
+publisher = {Springer International Publishing},
+title = {{Annotary: A Concolic Execution System for Developing Secure Smart Contracts}},
+year = {2019}
+}
+```
 
